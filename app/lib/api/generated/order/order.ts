@@ -173,7 +173,7 @@ export type orderControllerDeleteResponse200 = {
 export type orderControllerDeleteResponseSuccess = (orderControllerDeleteResponse200) & {
   headers: Headers;
 };
-;
+
 
 export type orderControllerDeleteResponse = (orderControllerDeleteResponseSuccess)
 
