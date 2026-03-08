@@ -4,9 +4,9 @@
 
 // async function listInvoices() {
 // 	const data = await sql`
-//     SELECT invoices.amount, customers.name
+//     SELECT invoices.amount, customer.name
 //     FROM invoices
-//     JOIN customers ON invoices.customer_id = customers.id
+//     JOIN customer ON invoices.customer_id = customer.id
 //     WHERE invoices.amount = 666;
 //   `;
 
