@@ -27,7 +27,7 @@ import { Input } from '@/components/ui/input';
 import { orderControllerFindAll } from '@/app/lib/api/generated/order/order';
 
 export default function OrdersPage() {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -37,12 +37,10 @@ export default function OrdersPage() {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      // DÙNG HÀM ORVAL THAY CHO FETCH THỦ CÔNG:
       const response = await orderControllerFindAll();
-      const result = response.data;
-      
-      // Vì API NestJS trả về cấu trúc { data: [...] }
-      setOrders(Array.isArray(result.data) ? result.data : []);
+      const result = response.data as unknown as { data?: unknown[] } | unknown[];
+
+      setOrders(Array.isArray(result) ? result : Array.isArray(result?.data) ? result.data : []);
     } catch (error) {
       console.error('API Error:', error);
     } finally {

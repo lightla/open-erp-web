@@ -27,7 +27,7 @@ export const getOrderControllerCreateUrl = () => {
 
   
 
-  return `http://localhost:3001/api/orders`
+  return `http://localhost:3002/api/orders`
 }
 
 export const orderControllerCreate = async (createOrderDto: CreateOrderDto, options?: RequestInit): Promise<orderControllerCreateResponse> => {
@@ -66,7 +66,7 @@ export const getOrderControllerFindAllUrl = () => {
 
   
 
-  return `http://localhost:3001/api/orders`
+  return `http://localhost:3002/api/orders`
 }
 
 export const orderControllerFindAll = async ( options?: RequestInit): Promise<orderControllerFindAllResponse> => {
@@ -104,7 +104,7 @@ export const getOrderControllerUpdateUrl = (id: string,) => {
 
   
 
-  return `http://localhost:3001/api/orders/${id}`
+  return `http://localhost:3002/api/orders/${id}`
 }
 
 export const orderControllerUpdate = async (id: string,
@@ -144,7 +144,7 @@ export const getOrderControllerFindOneUrl = (id: string,) => {
 
   
 
-  return `http://localhost:3001/api/orders/${id}`
+  return `http://localhost:3002/api/orders/${id}`
 }
 
 export const orderControllerFindOne = async (id: string, options?: RequestInit): Promise<orderControllerFindOneResponse> => {
@@ -173,7 +173,7 @@ export type orderControllerDeleteResponse200 = {
 export type orderControllerDeleteResponseSuccess = (orderControllerDeleteResponse200) & {
   headers: Headers;
 };
-
+;
 
 export type orderControllerDeleteResponse = (orderControllerDeleteResponseSuccess)
 
@@ -182,7 +182,7 @@ export const getOrderControllerDeleteUrl = (id: string,) => {
 
   
 
-  return `http://localhost:3001/api/orders/${id}`
+  return `http://localhost:3002/api/orders/${id}`
 }
 
 export const orderControllerDelete = async (id: string, options?: RequestInit): Promise<orderControllerDeleteResponse> => {

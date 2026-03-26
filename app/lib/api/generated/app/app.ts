@@ -22,7 +22,7 @@ export const getAppControllerGetHelloUrl = () => {
 
   
 
-  return `http://localhost:3001/api/`
+  return `http://localhost:3002/api/`
 }
 
 export const appControllerGetHello = async ( options?: RequestInit): Promise<appControllerGetHelloResponse> => {

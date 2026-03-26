@@ -6,7 +6,7 @@ module.exports = {
       target: './app/lib/api/generated',
       schemas: './app/lib/api/model',
       client: 'fetch',
-      baseUrl: 'http://localhost:3001/api',
+      baseUrl: 'http://localhost:3002/api',
     },
   },
 };

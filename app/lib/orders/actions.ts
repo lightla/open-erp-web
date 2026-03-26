@@ -10,8 +10,8 @@ const sql = postgres(process.env.POSTGRES_URL!);
 export async function createOrder(formData: FormData) {
   const rawFormData = {
     customer_id: formData.get('customer_id'),
-    amount: formData.get('amount'),
     status: formData.get('status'),
+    items: [],
   };
 
   const validatedFields = OrderSchema.safeParse(rawFormData);
@@ -23,8 +23,8 @@ export async function createOrder(formData: FormData) {
     };
   }
 
-  const { customer_id, amount, status } = validatedFields.data;
-  const amountInCents = amount * 100;
+  const { customer_id, status } = validatedFields.data;
+  const amountInCents = 0;
   const date = new Date().toISOString().split('T')[0];
 
   try {

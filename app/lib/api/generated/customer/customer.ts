@@ -27,7 +27,7 @@ export const getCustomerControllerCreateUrl = () => {
 
   
 
-  return `http://localhost:3001/api/customers`
+  return `http://localhost:3002/api/customers`
 }
 
 export const customerControllerCreate = async (createCustomerDto: CreateCustomerDto, options?: RequestInit): Promise<customerControllerCreateResponse> => {
@@ -66,7 +66,7 @@ export const getCustomerControllerFindAllUrl = () => {
 
   
 
-  return `http://localhost:3001/api/customers`
+  return `http://localhost:3002/api/customers`
 }
 
 export const customerControllerFindAll = async ( options?: RequestInit): Promise<customerControllerFindAllResponse> => {
@@ -104,7 +104,7 @@ export const getCustomerControllerFindOneUrl = (id: string,) => {
 
   
 
-  return `http://localhost:3001/api/customers/${id}`
+  return `http://localhost:3002/api/customers/${id}`
 }
 
 export const customerControllerFindOne = async (id: string, options?: RequestInit): Promise<customerControllerFindOneResponse> => {
@@ -142,7 +142,7 @@ export const getCustomerControllerUpdateUrl = (id: string,) => {
 
   
 
-  return `http://localhost:3001/api/customers/${id}`
+  return `http://localhost:3002/api/customers/${id}`
 }
 
 export const customerControllerUpdate = async (id: string,
@@ -182,7 +182,7 @@ export const getCustomerControllerRemoveUrl = (id: string,) => {
 
   
 
-  return `http://localhost:3001/api/customers/${id}`
+  return `http://localhost:3002/api/customers/${id}`
 }
 
 export const customerControllerRemove = async (id: string, options?: RequestInit): Promise<customerControllerRemoveResponse> => {

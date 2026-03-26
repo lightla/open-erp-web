@@ -1,5 +1,13 @@
 # 🛠 Setup dự án Open ERP - Web (Next.js)
 
+# NOTE
+
+## API Client Generators
+openapi-ts hoặc orval
+
+
+
+
 ## Danh sách Tools đã cài / chưa cài
 
 ### ✅ ĐÃ CÓ

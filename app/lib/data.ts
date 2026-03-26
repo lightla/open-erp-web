@@ -35,6 +35,13 @@ export async function fetchLatestInvoices() {
   }
 }
 
+export async function fetchFilteredInvoices(
+  _query: string,
+  _currentPage: number,
+): Promise<InvoicesTable[]> {
+  return [];
+}
+
 export async function fetchCustomers() {
   try {
     const response = await fetch(`${API_BASE_URL}/customers`);

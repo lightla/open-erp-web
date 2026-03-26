@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { CustomerField } from '@/app/lib/definitions';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { OrderSchema, Order } from '@/app/lib/orders/definitions';
+import { OrderSchema, Order, OrderFormValues } from '@/app/lib/orders/definitions';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -58,7 +58,7 @@ export default function CreateOrderForm({ customers }: { customers: CustomerFiel
     setMounted(true);
   }, []);
 
-  const form = useForm<Order>({
+  const form = useForm<OrderFormValues>({
     resolver: zodResolver(OrderSchema),
     defaultValues: {
       customer_id: '',
@@ -76,7 +76,7 @@ export default function CreateOrderForm({ customers }: { customers: CustomerFiel
     return acc + (Number(item.quantity) || 0) * (Number(item.price) || 0);
   }, 0) || 0;
 
-  async function onSubmit(values: Order) {
+  async function onSubmit(values: OrderFormValues) {
     try {
       const response = await fetch(`${API_BASE_URL}/orders`, {
         method: 'POST',

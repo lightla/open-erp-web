@@ -27,7 +27,7 @@ export const getProductControllerCreateUrl = () => {
 
   
 
-  return `http://localhost:3001/api/products`
+  return `http://localhost:3002/api/products`
 }
 
 export const productControllerCreate = async (createProductDto: CreateProductDto, options?: RequestInit): Promise<productControllerCreateResponse> => {
@@ -66,7 +66,7 @@ export const getProductControllerFindAllUrl = () => {
 
   
 
-  return `http://localhost:3001/api/products`
+  return `http://localhost:3002/api/products`
 }
 
 export const productControllerFindAll = async ( options?: RequestInit): Promise<productControllerFindAllResponse> => {
@@ -104,7 +104,7 @@ export const getProductControllerFindOneUrl = (id: string,) => {
 
   
 
-  return `http://localhost:3001/api/products/${id}`
+  return `http://localhost:3002/api/products/${id}`
 }
 
 export const productControllerFindOne = async (id: string, options?: RequestInit): Promise<productControllerFindOneResponse> => {
@@ -142,7 +142,7 @@ export const getProductControllerUpdateUrl = (id: string,) => {
 
   
 
-  return `http://localhost:3001/api/products/${id}`
+  return `http://localhost:3002/api/products/${id}`
 }
 
 export const productControllerUpdate = async (id: string,
@@ -182,7 +182,7 @@ export const getProductControllerRemoveUrl = (id: string,) => {
 
   
 
-  return `http://localhost:3001/api/products/${id}`
+  return `http://localhost:3002/api/products/${id}`
 }
 
 export const productControllerRemove = async (id: string, options?: RequestInit): Promise<productControllerRemoveResponse> => {
