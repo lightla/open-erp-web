@@ -83,7 +83,7 @@ export function ErpSidebar() {
         <SidebarToggleButton />
         <div className="flex items-center gap-2.5 group-data-[collapsible=icon]:justify-center">
           <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-sky-500 to-blue-600 text-white">
-            <Building2 className="h-4 w-4" />
+            <Building2 className="h-4 w-4" strokeWidth={1.5} />
           </div>
           <div className="group-data-[collapsible=icon]:hidden">
             <p className="text-sm font-semibold leading-none">Open ERP</p>
@@ -93,42 +93,57 @@ export function ErpSidebar() {
       </SidebarHeader>
 
       <SidebarContent>
-        {navGroups.map((group) => (
-          <SidebarGroup key={group.label}>
-            <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {group.items.map((item) => {
-                  const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
-                  const Icon = item.icon
-                  return (
-                    <SidebarMenuItem key={item.href}>
-                      <SidebarMenuButton
-                        asChild
-                        isActive={isActive}
-                        tooltip={item.label}
-                        className="group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center"
-                      >
-                        <Link href={item.href}>
-                          <Icon className="shrink-0 group-data-[collapsible=icon]:!h-5 group-data-[collapsible=icon]:!w-5" />
-                          <span className="group-data-[collapsible=icon]:hidden">{item.label}</span>
-                        </Link>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  )
-                })}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
+        {navGroups.map((group, i) => (
+          <div key={group.label}>
+            {/* Divider between groups — only visible when collapsed */}
+            {i > 0 && (
+              <div className="hidden group-data-[collapsible=icon]:block mx-3 border-t border-slate-300 my-2" />
+            )}
+            <SidebarGroup>
+              <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {group.items.map((item) => {
+                    const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+                    const Icon = item.icon
+                    return (
+                      <SidebarMenuItem key={item.href}>
+                        <SidebarMenuButton
+                          asChild
+                          isActive={isActive}
+                          tooltip={item.label}
+                          className="group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center data-[active=true]:bg-blue-50 data-[active=true]:text-blue-600 hover:bg-blue-50/60"
+                        >
+                          <Link href={item.href}>
+                            <Icon
+                              strokeWidth={1.5}
+                              className="shrink-0 group-data-[collapsible=icon]:!h-5 group-data-[collapsible=icon]:!w-5"
+                            />
+                            <span className="group-data-[collapsible=icon]:hidden">{item.label}</span>
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    )
+                  })}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </div>
         ))}
       </SidebarContent>
 
       <SidebarFooter className="border-t border-border">
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton tooltip="Sign out" className="text-muted-foreground hover:text-destructive">
-              <LogOut />
-              <span>Sign out</span>
+            <SidebarMenuButton
+              tooltip="Sign out"
+              className="text-muted-foreground hover:text-rose-500 group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:justify-center"
+            >
+              <LogOut
+                strokeWidth={1.5}
+                className="shrink-0 group-data-[collapsible=icon]:!h-5 group-data-[collapsible=icon]:!w-5"
+              />
+              <span className="group-data-[collapsible=icon]:hidden">Sign out</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

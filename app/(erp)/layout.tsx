@@ -8,7 +8,7 @@ export default function ErpLayout({ children }: { children: ReactNode }) {
     <TooltipProvider>
       <SidebarProvider
         defaultOpen={false}
-        style={{ '--sidebar-width-icon': '4.5rem' } as React.CSSProperties}
+        style={{ '--sidebar-width': '13rem', '--sidebar-width-icon': '4.5rem' } as React.CSSProperties}
       >
         <ErpSidebar />
         <SidebarInset className="min-w-0 overflow-hidden">
